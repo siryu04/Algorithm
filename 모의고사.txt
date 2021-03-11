@@ -35,34 +35,19 @@ def solution(answers):
     peopleA = [1,2,3,4,5]
     peopleB = [2,1,2,3,2,4,2,5]
     peopleC = [3,3,1,1,2,2,4,4,5,5]
-    cntA = 0
-    cntB = 0
-    cntC = 0
+    cnt = [0,0,0]
     for i in range(len(answers)) :
         if answers[i] == peopleA[i%5] :
-            cntA += 1
+            cnt[0] += 1
         if answers[i] == peopleB[i%8] :
-            cntB += 1
+            cnt[1] += 1
         if answers[i] == peopleC[i%10] :
-            cntC += 1
+            cnt[2] += 1
     
-    if cntA > cntB and cntA > cntC :
+    if cnt[0] == max(cnt) :
         answer.append(1)
-    elif cntA == cntB and cntA > cntC :
-        answer.append(1)
+    if cnt[1] == max(cnt) :
         answer.append(2)
-    elif cntA > cntB and cntA == cntC :
-        answer.append(1)
-        answer.append(3)
-    elif cntB > cntA and cntB > cntC :
-        answer.append(2)
-    elif cntB > cntA and cntB == cntC :
-        answer.append(2)
-        answer.append(3)
-    elif cntC > cntA and cntC > cntB :
-        answer.append(3)
-    elif cntA == cntB and cntA == cntC :
-        answer.append(1)
-        answer.append(2)
+    if cnt[2] == max(cnt) :
         answer.append(3)
     return answer
