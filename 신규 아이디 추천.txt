@@ -1,3 +1,5 @@
+'''
+출처 : 프로그래머스
 신규 아이디 추천
 문제 설명
 카카오에 입사한 신입 개발자 네오는 "카카오계정개발팀"에 배치되어, 카카오 서비스에 가입하는 유저들의 아이디를 생성하는 업무를 담당하게 되었습니다. "네오"에게 주어진 첫 업무는 새로 가입하는 유저들이 카카오 아이디 규칙에 맞지 않는 아이디를 입력했을 때, 입력된 아이디와 유사하면서 규칙에 맞는 아이디를 추천해주는 프로그램을 개발하는 것입니다.
@@ -41,9 +43,8 @@
 "bat.y.abcdefghi" → "bat.y.abcdefghi"
 
 따라서 신규 유저가 입력한 new_id가 "...!@BaT#*..y.abcdefghijklm"일 때, 네오의 프로그램이 추천하는 새로운 아이디는 "bat.y.abcdefghi" 입니다.
-
-
 '''
+
 def solution(new_id):
     answer = ''
     answer = new_id.lower()
@@ -96,4 +97,3 @@ def solution(new_id):
     
     #print(answer)
     return answer
-'''
