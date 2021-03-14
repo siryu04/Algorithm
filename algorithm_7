@@ -1,4 +1,5 @@
 '''
+# 출처 : 이것이 코딩 테스트다. with 파이썬
 재귀 함수 종료 예제
 '''
 def recursive_function(i) :
