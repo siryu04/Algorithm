@@ -1,0 +1,13 @@
+-- 입양 시각 구하기(2)
+-- 코드를 입력하세요
+SELECT T1.HOUR
+      ,COUNT(TO_CHAR(T2.DATETIME, 'HH24'))
+  FROM (
+            SELECT LEVEL-1 AS "HOUR"
+              FROM DUAL
+           CONNECT BY LEVEL <= 24
+        ) T1
+  LEFT JOIN ANIMAL_OUTS T2 
+         ON T1.HOUR = TO_CHAR(T2.DATETIME, 'HH24')
+ GROUP BY T1.HOUR
+ ORDER BY T1.HOUR
